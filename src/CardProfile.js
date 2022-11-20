@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState } from 'react';
 
 export const CardProfile = ({owner, useremail, realname ,phone, city}) => {
 
@@ -53,7 +52,7 @@ export const CardProfile = ({owner, useremail, realname ,phone, city}) => {
  
             <div class="sm:flex flex-shrink-0  w-auto mt-5 md:flex rounded overflow-hidden shadow-lg m-2 px-9 bg-gray-200">
             <div className=' m-auto rounded-full w-52 bg-rose-100 h-52 '>
-                <img class="w-full h-full object-center" src={mylink} />
+                <img class="w-full h-full object-center" src={mylink} alt="dicebearimages" />
             </div>
                     <div class="px-6 py-4">
                             <div class="font-bold text-xl mb-2">{owner}</div>
