@@ -7,7 +7,7 @@ import { CardProfile } from './CardProfile';
 import { LoadingPosts } from './LoadingPosts';
 import postuser from './user.json';
 
-const NUM_PER_PAGE = 1
+const NUM_PER_PAGE = 3
 const TOTAL_PAGES = 5
 
 
