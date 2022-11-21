@@ -4,7 +4,8 @@ export const CardProfile = ({owner, useremail, realname ,phone, city}) => {
 
 
 
-        const [picurl, setPicurl] = useState("https://avatars.dicebear.com/api/male/variant22/short16/.svg");
+        const [picurl, setPicurl] = useState("https://avatars.dicebear.com/api/miniavs/variant01/short16/.svg");
+
         // Todo : --------------------- Random Image from Dicebear API-----------
 
     
@@ -43,22 +44,20 @@ export const CardProfile = ({owner, useremail, realname ,phone, city}) => {
              "catEars", "glasses", "sailormoonCrown", "clownNose", "sleepMask", "sunglasses", "faceMask", "mustache"
         ];
         
-        const lnk2 = "/"+ random_sprite(spritesvariants)+"/"+random_sprite(hair) +"/.svg";
+        let lnk2 = "/"+ random_sprite(spritesvariants)+"/"+random_sprite(hair) +"/.svg";
 
         let mylink = lnk1.concat(random_sprite(sprites),lnk2); 
 
 
         // Todo : This hook sets the profile image only for the first render of the card.
 
-        useEffect(() => {
+        useEffect(() => {  // ? componentDidMount Alternative
             setPicurl(mylink);
         },[]);
 
       
     return (
         <>
-           
- 
             <div class="sm:flex flex-shrink-0  w-auto mt-5 md:flex rounded overflow-hidden shadow-lg m-2 px-9 bg-gray-200">
             <div className=' m-auto rounded-full w-52 bg-rose-100 h-52 '>
                 <img class="w-full h-full object-center" src={picurl} alt="dicebearimages" />
@@ -71,12 +70,8 @@ export const CardProfile = ({owner, useremail, realname ,phone, city}) => {
                             <div>{phone}</div>
                             <div>{city}</div>
                     </div>
-
             </div>
-
         </> 
-        
     );
-    
 }
 
