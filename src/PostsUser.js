@@ -36,7 +36,8 @@ export const PostsUser = () => {
 
   return(
     <>
- 
+            <h1 className='flex justify-center bg-white h-16 items-center text-3xl font-mono font-bold mb-11'> Lazy Loading Random Users-list </h1>
+    
     <div className=" sm:grid sm:m-10 sm:grid-cols-1 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 lg:gap-4 content-start bg-gray-600 p-11">
     
     {data.map(data => {
