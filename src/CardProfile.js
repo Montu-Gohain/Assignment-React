@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 export const CardProfile = ({owner, useremail, realname ,phone, city}) => {
 
 
+
+        const [picurl, setPicurl] = useState("https://avatars.dicebear.com/api/male/variant22/short16/.svg");
         // Todo : --------------------- Random Image from Dicebear API-----------
 
     
@@ -45,6 +47,13 @@ export const CardProfile = ({owner, useremail, realname ,phone, city}) => {
 
         let mylink = lnk1.concat(random_sprite(sprites),lnk2); 
 
+
+        // Todo : This hook sets the profile image only for the first render of the card.
+
+        useEffect(() => {
+            setPicurl(mylink);
+        },[]);
+
       
     return (
         <>
@@ -52,7 +61,7 @@ export const CardProfile = ({owner, useremail, realname ,phone, city}) => {
  
             <div class="sm:flex flex-shrink-0  w-auto mt-5 md:flex rounded overflow-hidden shadow-lg m-2 px-9 bg-gray-200">
             <div className=' m-auto rounded-full w-52 bg-rose-100 h-52 '>
-                <img class="w-full h-full object-center" src={mylink} alt="dicebearimages" />
+                <img class="w-full h-full object-center" src={picurl} alt="dicebearimages" />
             </div>
                     <div class="px-6 py-4">
                             <div class="font-bold text-xl mb-2">{owner}</div>
